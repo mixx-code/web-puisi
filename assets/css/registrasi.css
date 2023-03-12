@@ -1,0 +1,121 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.container .kotak1 {
+    width: 500px;
+    height: 100vh;
+    background-color: #EEF2E6;
+    position: relative;
+    background-image: url("../../assets/images/bg.jpg");
+    -o-object-fit: contain;
+    object-fit: contain;
+    filter: saturate(10%);
+}
+
+.container .kotak1 .switch {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    top: 40vh;
+}
+
+.container .kotak1 .switch .link-registrasi {
+    background-color: #EEF2E6;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.container .kotak1 .switch a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px;
+    width: 150px;
+}
+
+.container .kotak2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #EEF2E6;
+}
+
+.container .kotak2 .title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #3F4E4F;
+}
+
+.container .kotak2 form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    overflow: hidden;
+}
+
+.container .kotak2 form input {
+    margin-bottom: 30px;
+    background-color: #EEF2E6;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    color: gray;
+    letter-spacing: 1px;
+}
+
+.container .kotak2 form .username {
+    position: relative;
+}
+
+.container .kotak2 form .username i {
+    position: absolute;
+    left: 8px;
+    top: 9px;
+    color: gray;
+}
+
+.container .kotak2 form .password {
+    position: relative;
+}
+
+.container .kotak2 form .password i {
+    position: absolute;
+    left: 8px;
+    top: 9px;
+    color: gray;
+}
+
+.container .kotak2 form .btn {
+    display: flex;
+    justify-content: end;
+}
+
+.container .kotak2 form .btn button {
+    color: white;
+    background-color: green;
+    width: 150px;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .kotak2 form .btn a {
+    text-decoration: none;
+}

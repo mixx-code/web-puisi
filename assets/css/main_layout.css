@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/images/background-tugas-besar.png");
+    font-family: "Roboto", sans-serif;
+    position: relative;
+}
+
+body a {
+    text-decoration: none;
+}
+
+body nav {
+    z-index: 99;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+body nav .logo {
+    margin-left: 50px;
+}
+
+body nav .search {
+    font-size: 16px;
+    width: 1000px;
+    border: none;
+    outline: none;
+}
+
+body nav .card-profile {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background-color: #64f4e3;
+    justify-content: center;
+    border-radius: 100px;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+}
+
+body nav .card-profile .bulet {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: gray;
+}
+
+body nav .card-profile .dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 70px;
+    right: 0px;
+    width: 226px;
+    min-height: 101px;
+    background-color: #64f4e3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+    -webkit-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+    -moz-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+}
+
+body nav .card-profile hr {
+    width: 100%;
+}
+
+body nav .card-profile .dropdown a {
+    font-size: 24px;
+    font-weight: 200;
+    text-decoration: none;
+    color: #666363;
+    margin-bottom: 20px;
+}
+
+body nav .card-profile .hidden {
+    z-index: 1;
+    display: none;
+}

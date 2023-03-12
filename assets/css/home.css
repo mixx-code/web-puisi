@@ -1,0 +1,102 @@
+.container-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.container-home .welcome {
+    width: 70%;
+    background-color: rgba(227, 224, 224, 0.7);
+    border-radius: 5px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 50px;
+}
+
+.container-home .content {
+    position: relative;
+    width: 70%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(227, 224, 224, 0.7);
+    padding: 20px;
+    padding-bottom: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.container-home .content .wrapp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-home .content .wrapp .card-puisi {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    width: 500px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
+    -webkit-box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
+    -moz-box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
+}
+
+.container-home .content .wrapp .card-puisi .isi {
+    margin-top: -10px;
+    font-style: italic;
+    font-weight: 100;
+    color: #7c6868;
+    font-size: 18px;
+}
+
+.container-home .content .wrapp .card-puisi .tanggal {
+    margin-top: -8px;
+    font-size: 15px;
+    color: #7c6868;
+}
+
+.container-home .content .wrapp .card-puisi .title-penulis {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0;
+    color: #444444;
+}
+
+.container-home .content .pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-home .content .pagination .btn {
+    position: absolute;
+    bottom: 50px;
+    padding: 20px;
+    width: 150px;
+    border-radius: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.container-home .content .pagination .sebelumnya {
+    background-color: #978484;
+    left: 50px;
+}
+
+.container-home .content .pagination .selanjutnya {
+    right: 50px;
+    background-color: #0066ff;
+}

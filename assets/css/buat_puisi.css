@@ -1,0 +1,89 @@
+.container-buat-puisi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-buat-puisi .lable-buat-puisi {
+  margin-top: 100px;
+  width: 78%;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+  -webkit-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+  -moz-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+}
+
+.container-buat-puisi .card-buat-puisi {
+  width: 1450px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+  -webkit-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+  -moz-box-shadow: 0px 0px 38px 7px rgba(51, 51, 51, 0.34);
+}
+
+.container-buat-puisi .card-buat-puisi .input-puisi {
+  border: none;
+  background-color: rgba(217, 217, 217, 0.38);
+  width: 500px;
+  height: 50px;
+  color: #736f6f;
+  outline: none;
+  font-size: 18px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+  -webkit-box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+  -moz-box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+}
+
+.container-buat-puisi .card-buat-puisi textarea {
+  border: none;
+  background-color: rgba(217, 217, 217, 0.38);
+  width: 1000px;
+  min-height: 250px;
+  color: #736f6f;
+  font-size: 18px;
+  outline: none;
+  padding-top: 30px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+  -webkit-box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+  -moz-box-shadow: -6px 6px 14px 0px rgba(51, 51, 51, 0.34);
+}
+
+.container-buat-puisi .card-buat-puisi .btn-buat-puisi {
+  display: flex;
+}
+
+.container-buat-puisi .card-buat-puisi .btn-buat-puisi .btn-puisi {
+  padding: 20px;
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.container-buat-puisi .card-buat-puisi .btn-buat-puisi .kembali {
+  background-color: #978484;
+  color: white;
+  margin-right: 50px;
+}
+
+.container-buat-puisi .card-buat-puisi .btn-buat-puisi .upload {
+  color: white;
+  border: none;
+  width: 140px;
+  padding: 20px;
+  background-color: #3ad879;
+}
