@@ -26,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // jika password tidak cocok
-            $login_error = "Username atau password salah.";
+            header("Location: ../../pages/login/index.php");
         }
     } else {
         // jika username tidak ditemukan
-        $login_error = "Username atau password salah.";
+        echo "<script>alert('username atau password salah !!!')</script>";
+        header("Location: ../../pages/login/index.php");
     }
 }

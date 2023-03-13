@@ -34,7 +34,7 @@
                     <input type="password" class="input-password" placeholder="Password" name="password" maxlength="8" required>
                 </div>
                 <div class="btn">
-                    <button type="submit">Login</button>
+                    <button type="submit" name="submit">Login</button>
                 </div>
             </form>
         </div>

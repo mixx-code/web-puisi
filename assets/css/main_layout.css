@@ -25,6 +25,8 @@ body nav {
 
 body nav .logo {
     margin-left: 50px;
+    font-size: 20px;
+    width: 250px;
 }
 
 body nav .search {
