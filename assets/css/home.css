@@ -50,6 +50,23 @@
     box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
     -webkit-box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
     -moz-box-shadow: -10px 10px 38px 0px rgba(103, 93, 93, 0.53);
+    position: relative;
+}
+
+.delete {
+    position: absolute;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    color: red;
+}
+
+.edit {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    color: blue;
 }
 
 .container-home .content .wrapp .card-puisi .isi {

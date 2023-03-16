@@ -26,8 +26,8 @@
             ?>
             <?php if (mysqli_num_rows($result) > 0) : ?>
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-
-                    <a href="../detail/detail_puisi.php?id=<?php echo $row['id']; ?>" class="card-puisi">
+                    <div class="card-puisi">
+                    <a href="../detail/detail_puisi.php?id=<?php echo $row['id']; ?>" >
                         <?php
                         $teks = $row['isi'];
                         $baris = explode("\n", $teks);
@@ -41,6 +41,9 @@
                         <p class="tanggal"><?php echo $row["tanggal_post"] ?></p>
                         <p class="title-penulis"><?php echo $row["judul"] ?> - <?php echo $row["penerbit"] ?></p>
                     </a>
+                    <a href="../../config/controllers/proses_delete_puisi.php?id=<?= $row['id']; ?>" class="delete" onclick="return confirm('Apa anda mau menghapus puisi ini ? ')"><i class="fa-solid fa-trash fa-lg"></i></a>
+                    <a href="../../config/controllers/proses_delete_puisi.php?id=<?= $row['id']; ?>" class="edit" onclick="return confirm('Apa anda mau menghapus puisi ini ? ')"><i class="fa-solid fa-pen-to-square fa-lg"></i></i></a>
+                    </div>
                 <?php endwhile; ?>
             <?php else : ?>
                 <p>Anda belum membuat puisi</p>
