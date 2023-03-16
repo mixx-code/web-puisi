@@ -1,16 +1,17 @@
 <!-- <a href="../create_puisi/create_puisi.php">Create New Puisi</a> -->
+<?php
+
+// Jika session atau token tidak valid
+if (!isset($_SESSION['username'])) {
+    echo "<script>alert('halaman ini tidak dapat diakses jika belum login !!!')</script>";
+    header('Location: http://localhost/web-puisi'); // Arahkan ke halaman login
+    die(); // Hentikan eksekusi script
+}
+?>
 
 <div class="container-home">
-    <div class="welcome">
-        <?php
-        if (isset($_SESSION["username"])) {
-            $user_login = $_SESSION["username"];
-            echo '<h1>Puisi, ' . $user_login . '!</h1>';
-        } else {
-            echo "<h1>Welcome home, Teman!</h1>";
-        } ?>
-        <hr>
-    </div>
+    <?php include "../../components/welcome.php" ?>
+
 
     <div class="content">
         <h2>Pusis anda</h2>
@@ -26,24 +27,7 @@
             ?>
             <?php if (mysqli_num_rows($result) > 0) : ?>
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-                    <div class="card-puisi">
-                    <a href="../detail/detail_puisi.php?id=<?php echo $row['id']; ?>" >
-                        <?php
-                        $teks = $row['isi'];
-                        $baris = explode("\n", $teks);
-                        echo "<p style='color: #7C6868'>";
-                        for ($i = 0; $i < 6 && $i < count($baris); $i++) {
-                            echo $baris[$i] . "<br>";  // Tampilkan elemen ke-$i dari array, diikuti tag <br>
-                        }
-                        echo "</p>";
-                        ?>
-                        <hr style="color: #7C6868">
-                        <p class="tanggal"><?php echo $row["tanggal_post"] ?></p>
-                        <p class="title-penulis"><?php echo $row["judul"] ?> - <?php echo $row["penerbit"] ?></p>
-                    </a>
-                    <a href="../../config/controllers/proses_delete_puisi.php?id=<?= $row['id']; ?>" class="delete" onclick="return confirm('Apa anda mau menghapus puisi ini ? ')"><i class="fa-solid fa-trash fa-lg"></i></a>
-                    <a href="../../config/controllers/proses_delete_puisi.php?id=<?= $row['id']; ?>" class="edit" onclick="return confirm('Apa anda mau menghapus puisi ini ? ')"><i class="fa-solid fa-pen-to-square fa-lg"></i></i></a>
-                    </div>
+                    <?php include "../../components/card_puisi.php"; ?>
                 <?php endwhile; ?>
             <?php else : ?>
                 <p>Anda belum membuat puisi</p>

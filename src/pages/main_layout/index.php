@@ -3,12 +3,16 @@
         <?php
         @$page = $_GET['page'];
         if (!empty($page)) {
+            $id = $_GET['id'];
             switch ($page) {
                 case 'home':
                     include '../home/home.php';
                     break;
                 case 'buat_puisi':
                     include '../buat_puisi/buat_puisi.php';
+                    break;
+                case 'edit_puisi':
+                    include '../edit_puisi/edit_puisi.php';
                     break;
                 case 'puisi_anda':
                     include '../puisi_anda/puisi_anda.php';
@@ -30,21 +34,4 @@
     </div>
 
     </div>
-    <script>
-        const cardProfile = document.querySelector(".card-profile");
-        const dropdown = document.querySelector(".dropdown");
-
-        cardProfile.addEventListener("click", () => {
-            // Cek apakah elemen 'myDiv' ditampilkan atau disembunyikan
-            if (dropdown.classList.contains("hidden")) {
-                // Menghapus kelas 'hidden' dari elemen 'div'
-                dropdown.classList.remove("hidden");
-            } else {
-                // Menambahkan kelas 'hidden' kembali ke elemen 'dropdown' jika sudah ditampilkan sebelumnya
-                dropdown.classList.add("hidden");
-            }
-        });
-    </script>
-</body>
-
-</html>
+    <?php include "../../components/footer.php" ?>

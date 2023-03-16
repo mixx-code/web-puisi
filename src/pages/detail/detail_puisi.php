@@ -1,6 +1,5 @@
 <?php
 include "../../config/db/koneksi.php"; // file koneksi ke database
-include "../../components/header.php";
 
 
 $id = $_GET['id'];

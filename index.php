@@ -5,5 +5,5 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 	$uri = 'http://';
 }
 $uri .= $_SERVER['HTTP_HOST'];
-header('Location: ' . $uri . '/web-puisi/src/pages/main_layout/?page=main_layout');
+header('Location: ' . $uri . '/web-puisi/src/pages/main_layout/?page=home');
 exit;

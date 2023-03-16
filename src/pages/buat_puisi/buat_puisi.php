@@ -1,5 +1,4 @@
 <?php
-session_start(); // Mulai session
 
 // Jika session atau token tidak valid
 if (!isset($_SESSION['username'])) {

@@ -28,6 +28,8 @@
             echo "Halaman detail";
         } elseif ($pg == "main_layout") {
             echo "Halaman home";
+        } elseif ($pg == "edit_puisi") {
+            echo "Halaman edit puisi";
         }
         ?>
     </title>
@@ -51,8 +53,8 @@
         <a href="#">link 3</a>
     </div>
     </div>
-<nav>
-        <h1 class="logo"><a href="/web-puisi" style="color: black;">Tugas Besar</a></h1>
+    <nav>
+        <h1 class="logo"><a href="?page=home" style="color: black;">Tugas Besar</a></h1>
         <input type="text" class="search" placeholder="Search" maxlength="50">
         <div class="card-profile">
             <div class="bulet"></div>

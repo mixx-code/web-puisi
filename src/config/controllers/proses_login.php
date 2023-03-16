@@ -22,15 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nama_lengkap"] = $row["nama_lengkap"];
 
             // redirect ke halaman utama setelah login
-            header("Location: ../../pages/main_layout/index.php");
+            echo "<script>alert('Selamat datang " . $username . " 🫡')</script>";
+            echo "<meta http-equiv='refresh' content='0; url= ../../pages/main_layout/?page=home'>";
             exit();
         } else {
             // jika password tidak cocok
-            header("Location: ../../pages/login/index.php");
+            echo "<script>alert('password salah !!!')</script>";
+            echo "<meta http-equiv='refresh' content='0; url= ../../pages/login/index.php'>";
         }
     } else {
         // jika username tidak ditemukan
-        echo "<script>alert('username atau password salah !!!')</script>";
-        header("Location: ../../pages/login/index.php");
+        echo "<script>alert('username salah !!!')</script>";
+        echo "<meta http-equiv='refresh' content='0; url= ../../pages/login/index.php'>";
     }
 }
