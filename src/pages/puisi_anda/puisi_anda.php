@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: http://localhost/web-puisi'); // Arahkan ke halaman login
     die(); // Hentikan eksekusi script
 }
+$user_id = $_SESSION['user_id'];
 ?>
 
 <div class="container-home">
@@ -17,10 +18,8 @@ if (!isset($_SESSION['username'])) {
         <h2>Pusis anda</h2>
         <div class="wrapp">
             <?php
-            include "../../config/db/koneksi.php"; // file koneksi ke database
-
             // mengambil data puisi dari tabel puisi
-            $sql = "SELECT * FROM puisi where penerbit ='$user_login'";
+            $sql = "SELECT * FROM puisi where id_user ='$user_id'";
             $result = mysqli_query($conn, $sql);
             $cek_puisi = "SELECT IFNULL(isi, '') AS isi FROM puisi";
 

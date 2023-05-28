@@ -13,7 +13,7 @@ if ($pg == "puisi_anda") : ?>
             ?>
             <hr style="color: #7C6868">
             <p class="tanggal"><?php echo $row["tanggal_post"] ?></p>
-            <p class="title-penulis"><?php echo $row["judul"] ?> - <?php echo $row["penerbit"] ?></p>
+            <p class="title-penulis"><?php echo $row["judul"] ?> </p>
         </a>
         <a href="?page=edit_puisi&id=<?= $row['id']; ?>" class="edit"><i class="fa-solid fa-pen-to-square fa-lg"></i></i></a>
         <a href="../../config/controllers/proses_delete_puisi.php?id=<?= $row['id']; ?>" class="delete" onclick="return confirm('Apa anda mau menghapus puisi ini ? ')"><i class="fa-solid fa-trash fa-lg"></i></a>
@@ -31,6 +31,6 @@ if ($pg == "puisi_anda") : ?>
         ?>
         <hr style="color: #7C6868">
         <p class="tanggal"><?php echo $row["tanggal_post"] ?></p>
-        <p class="title-penulis"><?php echo $row["judul"] ?> - <?php echo $row["penerbit"] ?></p>
+        <p class="title-penulis"><?php echo $row["judul"] ?></p>
     </a>
 <?php endif; ?>

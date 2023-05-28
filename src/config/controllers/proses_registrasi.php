@@ -4,7 +4,6 @@ include "../../config/db/koneksi.php";
 
 // Tangkap data dari form registrasi
 $username = $_POST['username'];
-$nama_lengkap = $_POST['nama_lengkap'];
 $password = $_POST['password'];
 $konfirmasi_password = $_POST['konfirmasi_password'];
 
@@ -31,7 +30,7 @@ if ($cek > 0) {
 }
 
 // Query untuk menyimpan data registrasi ke database
-$query = mysqli_query($conn, "INSERT INTO user (username, nama_lengkap, password) VALUES ('$username', '$nama_lengkap', '$password')");
+$query = mysqli_query($conn, "INSERT INTO user (username, password) VALUES ('$username', '$password')");
 
 // Jika query berhasil dijalankan, tampilkan pesan sukses dan redirect ke halaman login
 if ($query) {

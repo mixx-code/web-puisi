@@ -7,7 +7,6 @@
         <h2>Pusis untuk anda</h2>
         <div class="wrapp">
             <?php
-            include "../../config/db/koneksi.php"; // file koneksi ke database
             // mengambil data puisi dari tabel puisi
             $sql = "SELECT * FROM puisi ORDER BY tanggal_post DESC";
             $result = mysqli_query($conn, $sql);

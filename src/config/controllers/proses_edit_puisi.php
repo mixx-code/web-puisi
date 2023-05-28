@@ -13,7 +13,7 @@ if (!$conn) {
         $isi = $_POST['isi'];
 
         // membuat query update data dengan prepared statement
-        $query = "UPDATE puisi SET judul=?, genre=?, isi=? WHERE id=?";
+        $query = "UPDATE puisi SET judul=?, id_genre=?, isi=? WHERE id=?";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, 'sssi', $judul, $genre, $isi, $id);
         $result = mysqli_stmt_execute($stmt);

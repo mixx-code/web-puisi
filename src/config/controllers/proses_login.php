@@ -17,9 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // memverifikasi password
         if (password_verify($password, $row["password"])) {
             // menyimpan informasi login ke session
-            $_SESSION["user_id"] = $row["id"];
+            $_SESSION["user_id"] = $row["id_user"];
             $_SESSION["username"] = $row["username"];
-            $_SESSION["nama_lengkap"] = $row["nama_lengkap"];
 
             // redirect ke halaman utama setelah login
             echo "<script>alert('Selamat datang " . $username . " 🫡')</script>";

@@ -29,10 +29,6 @@
                     <i class="fa-solid fa-user"></i>
                     <input type="text" class="input-user" placeholder="Username" name="username" maxlength="50" required>
                 </div>
-                <div class="username">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" class="input-user" placeholder="Nama Lengkap" name="nama_lengkap" maxlength="50" required>
-                </div>
                 <div class="password">
                     <i class="fa-solid fa-lock"></i>
                     <input type="password" class="input-password" placeholder="Password" name="password" maxlength="8                                                                                   " required>
