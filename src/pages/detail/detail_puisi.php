@@ -11,6 +11,6 @@ $row = mysqli_fetch_assoc($result);
     <div class="content-detail-puisi">
         <h1><?php echo $row['judul']; ?></h1>
         <p><?php echo $row['tanggal_post']; ?></p>
-        <p><?php echo nl2br($row['isi']); ?></p>
+        <p class="detail-isi"><?php echo nl2br($row['isi']); ?></p>
     </div>
 </div>

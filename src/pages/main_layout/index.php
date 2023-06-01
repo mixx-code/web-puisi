@@ -3,7 +3,7 @@
         <?php
         @$page = $_GET['page'];
         if (!empty($page)) {
-            $id = $_GET['id'];
+            @$id = $_GET['id'];
             switch ($page) {
                 case 'home':
                     include '../home/home.php';
@@ -19,6 +19,15 @@
                     break;
                 case 'detail':
                     include '../detail/detail_puisi.php';
+                    break;
+                case 'profil':
+                    include '../profil/index.php';
+                    break;
+                case 'isi-profil':
+                    include '../isi_profil/index.php';
+                    break;
+                case 'edit-profil':
+                    include '../edit_profil/index.php';
                     break;
                 default:
                     include '../home/home.php';

@@ -6,19 +6,27 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
     // mengambil data dari form
-    if (isset($_POST['id'])) {
-        $id = $_POST['id'];
-        $judul = $_POST['judul'];
-        $genre = $_POST['genre'];
-        $isi = $_POST['isi'];
+    $id_user = isset($_GET['id_user']) ? $_GET['id_user'] : '';
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nama = $_POST['nama'];
+        $umur = $_POST['umur'];
+        $alamat = $_POST['alamat'];
+        $email = $_POST['email'];
+        $no_telp = $_POST['no_telp'];
+        $tanggal_lahir = $_POST['tanggal_lahir'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
 
         // membuat query update data dengan prepared statement
-        $query = "UPDATE puisi SET judul=?, id_genre=?, isi=? WHERE id=?";
+        $query = "UPDATE profil_penerbit SET nama = ?, umur = ?, alamat = ?, email = ?, no_telp = ?, tanggal_lahir = ?, jenis_kelamin = ? WHERE id_user = ?";
         $stmt = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($stmt, 'sssi', $judul, $genre, $isi, $id);
+        
+        // bind parameter ke statement
+        mysqli_stmt_bind_param($stmt, "sisssssi", $nama, $umur, $alamat, $email, $no_telp, $tanggal_lahir, $jenis_kelamin, $id_user);
+
+        // jalankan statement
         $result = mysqli_stmt_execute($stmt);
 
-        // mengecek apakah query berhasil dijalankan atau tidak
         if ($result) {
             // redirect ke halaman utama jika berhasil
             echo "<script type='text/javascript'>alert('Berhasil Diupdate')</script>";
@@ -28,6 +36,9 @@ if (!$conn) {
             // tampilkan pesan error jika query gagal dijalankan
             echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }
+        
+        // menutup statement
+        mysqli_stmt_close($stmt);
     }
 }
 

@@ -7,10 +7,10 @@
         <h2>Pusis untuk anda</h2>
         <div class="wrapp">
             <?php
-            include "../../config/db/koneksi.php"; // file koneksi ke database
             // mengambil data puisi dari tabel puisi
-            $sql = "SELECT * FROM puisi ORDER BY tanggal_post DESC";
-            $result = mysqli_query($conn, $sql);
+            $puisi = "SELECT puisi.id, puisi.judul, puisi.id_genre, puisi.isi, puisi.tanggal_post, genre.id_genre, genre.genre FROM puisi JOIN genre ON genre.id_genre = puisi.id_genre ORDER BY puisi.tanggal_post DESC";
+            // $sql = "SELECT * FROM puisi ORDER BY tanggal_post DESC";
+            $result = mysqli_query($conn, $puisi);
             ?>
             <?php if (mysqli_num_rows($result) > 0) : ?>
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>

@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: http://localhost/web-puisi'); // Arahkan ke halaman login
     die(); // Hentikan eksekusi script
 }
+$user_id = $_SESSION['user_id'];
 ?>
 
 <div class="container-home">
@@ -14,16 +15,17 @@ if (!isset($_SESSION['username'])) {
 
 
     <div class="content">
-        <h2>Pusis anda</h2>
+        <?php
+        // mengambil data puisi dari tabel puisi
+        $total_puisi = mysqli_query($conn, "SELECT COUNT(*) AS total_puisi FROM puisi where id_user ='$user_id'");
+        $total = mysqli_fetch_assoc($total_puisi);
+        ?>
+        <h2>Pusis anda : <?= $total['total_puisi'] > 0 ? $total['total_puisi'] : '0' ?></h2>
         <div class="wrapp">
             <?php
-            include "../../config/db/koneksi.php"; // file koneksi ke database
-
-            // mengambil data puisi dari tabel puisi
-            $sql = "SELECT * FROM puisi where penerbit ='$user_login'";
+            $sql = "SELECT * FROM puisi where id_user ='$user_id'";
             $result = mysqli_query($conn, $sql);
             $cek_puisi = "SELECT IFNULL(isi, '') AS isi FROM puisi";
-
             ?>
             <?php if (mysqli_num_rows($result) > 0) : ?>
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>

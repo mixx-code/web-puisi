@@ -1,3 +1,8 @@
+<?php
+require "../../config/db/koneksi.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +19,7 @@
     <link rel="stylesheet" href="../create_puisi/create_puisi.css">
     <link rel="stylesheet" href="../../../assets/css/buat_puisi.css">
     <link rel="stylesheet" href="../../../assets/css/detail_puisi.css">
+    <link rel="stylesheet" href="../../../assets/css/profil.css">
     <link rel="shortcut icon" href="../../../assets/icon/otaku.png" type="image/x-icon">
     <title>
         <?php
@@ -39,7 +45,9 @@
     <div class="container">
         <?php
         session_start();
-
+        $id_user = $_SESSION['user_id'];
+        $foto = mysqli_query($conn, "SELECT foto_profil FROM profil_penerbit WHERE id_user = '$id_user'");
+        $data = mysqli_fetch_assoc($foto);
         // cek apakah user sudah login atau belum
         if (isset($_SESSION["username"])) {
             // jika sudah login, tampilkan link logout
@@ -57,7 +65,14 @@
         <h1 class="logo"><a href="?page=home" style="color: black;">Tugas Besar</a></h1>
         <input type="text" class="search" placeholder="Search" maxlength="50">
         <div class="card-profile">
-            <div class="bulet"></div>
+            <div class="bulet">
+                
+                <?php
+                if (isset($_SESSION["username"])) {
+                    echo '<img class="bulet" src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>' ;
+                }
+                ?>
+            </div>
             <?php if (isset($_SESSION["username"])) {
                 echo '<p>' . $_SESSION["username"] . '</p>';
             } else {
@@ -68,7 +83,7 @@
             <div class="dropdown hidden">
                 <?php
                 if (isset($_SESSION['username'])) {
-                    echo "<a href='#'>Profile</a>"; //buka
+                    echo "<a href='?page=profil&id_user=$id_user'>Profile</a>"; //buka
                     echo "<hr>";
                     echo "<a href='?page=buat_puisi'>Buat Puisi</a>";
                     echo "<a href='?page=puisi_anda'>Lihat Puisi Anda</a>";

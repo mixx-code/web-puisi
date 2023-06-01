@@ -9,10 +9,10 @@ include "../../config/db/koneksi.php";
 $judul = $_POST['judul'];
 $genre = $_POST['genre'];
 $isi = $_POST['isi'];
-$penerbit = $_SESSION['username']; // username penerbit diambil dari session
+$id_user = $_SESSION['user_id']; // username penerbit diambil dari session
 
 // membuat query insert data
-$query = "INSERT INTO puisi (judul, genre, isi, penerbit) VALUES ('$judul', '$genre', '$isi', '$penerbit')";
+$query = "INSERT INTO puisi (judul, id_genre, isi, id_user) VALUES ('$judul', '$genre', '$isi', '$id_user')";
 
 // menjalankan query
 $result = mysqli_query($conn, $query);
