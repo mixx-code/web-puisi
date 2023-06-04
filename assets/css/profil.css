@@ -17,11 +17,24 @@
     margin-top: 100px;
     border-radius: 8px;
 }
-.profil .foto-profil img{
+.profil .foto-profil .foto{
+    position: relative;
+}
+.profil .foto-profil .foto img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: azure;
+    border: 2px solid rgb(65, 63, 63);
+}
+.profil .foto-profil .foto a{
+    position: absolute;
+    right: 10px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid rgb(65, 63, 63);
+    color: rgb(65, 63, 63);
 }
 .profil .data-profil{
     box-sizing: border-box;

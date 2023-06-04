@@ -63,13 +63,22 @@ require "../../config/db/koneksi.php";
     </div>
     <nav>
         <h1 class="logo"><a href="?page=home" style="color: black;">Tugas Besar</a></h1>
-        <input type="text" class="search" placeholder="Search" maxlength="50">
+        <form action="../../config/controllers/proses_searching.php" method="GET">
+            <input type="text" name="kata_kunci" class="search" placeholder="Search" maxlength="50">
+            <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+        </form>
         <div class="card-profile">
             <div class="bulet">
-                
+
                 <?php
-                if (isset($_SESSION["username"])) {
-                    echo '<img class="bulet" src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>' ;
+                // if ($data['foto_profil'] != null) {
+                //     echo '<img class="bulet" src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>';
+                // }
+                // 
+                ?>
+                <?php
+                if (!empty($data['foto_profil'])) {
+                    echo '<img class="bulet" src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>';
                 }
                 ?>
             </div>

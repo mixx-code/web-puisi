@@ -29,6 +29,12 @@
                 case 'edit-profil':
                     include '../edit_profil/index.php';
                     break;
+                case 'edit-foto':
+                    include '../edit_profil/edit_foto.php';
+                    break;
+                case 'searching':
+                    include '../searching/searching.php';
+                    break;
                 default:
                     include '../home/home.php';
                     break;

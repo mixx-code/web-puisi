@@ -5,6 +5,7 @@ $id_user = $_SESSION['user_id'];
 <div class="container-buat-puisi">
     <h1 class="lable-buat-puisi">Isi Data Profil</h1>
     <form action="../../config/controllers/proses_isi_profil.php" enctype="multipart/form-data" method="post" class="card-buat-puisi">
+        <label for="foto_profil">Foto profil</label>
         <input type="file" name="foto_profil" id="" class="input-puisi">
         <input type="text" name="nama" id="" class="input-puisi" placeholder="Masukkan Nama anda">
         <input type="number" name="umur" id="" class="input-puisi" placeholder="Masukkan Umur anda">

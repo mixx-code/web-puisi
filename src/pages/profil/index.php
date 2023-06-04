@@ -6,9 +6,21 @@ $data = mysqli_fetch_assoc($data_profil);
 
 <div class="profil">
     <div class="foto-profil">
-        <?php
-        echo '<img src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>';
-        ?>
+        <div class="foto">
+            <?php
+            if (!empty($data['foto_profil'])) {
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($data['foto_profil']) . '"/>';
+            } else {
+                echo '<img src="../../../assets/images/pp-kosong.png"/>';
+            }
+            ?>
+            <?php
+            $row = mysqli_num_rows($data_profil);
+            ?>
+            <?php if ($row > 0) : ?>
+                <a href="?page=edit-foto&id_user=<?= $data['id_user'] ?>"><i class="fa-solid fa-pen"></i></a>
+            <?php endif ?>
+        </div>
     </div>
     <div class="data-profil">
         <div class="edit-profil">

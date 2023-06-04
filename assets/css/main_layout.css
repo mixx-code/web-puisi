@@ -33,9 +33,20 @@ body nav .search {
     font-size: 16px;
     width: 1000px;
     border: none;
-    outline: none;
+    outline-color: #666363;
+    padding: 10px 20px;
 }
-
+body nav .btn-search{
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666363;
+}
+body nav .btn-search:hover{
+    color: #292727;
+    transform: scale(1.2);
+}
 body nav .card-profile {
     margin-right: 50px;
     display: flex;
