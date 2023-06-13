@@ -12,6 +12,16 @@
                 dropdown.classList.add("hidden");
             }
         });
+
+        const searchElement = document.querySelector('.search')
+        searchElement.addEventListener('input', () => {
+            const btnSearch = document.querySelector('.btn-search')
+            if (searchElement.value.trim() !== '') {
+                btnSearch.style.display = 'block'
+            } else {
+                btnSearch.style.display = 'none'
+            }
+        })
     </script>
     </body>
 

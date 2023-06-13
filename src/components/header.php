@@ -63,7 +63,7 @@ require "../../config/db/koneksi.php";
     </div>
     <nav>
         <h1 class="logo"><a href="?page=home" style="color: black;">Tugas Besar</a></h1>
-        <form action="../../config/controllers/proses_searching.php" method="GET">
+        <form class="pencarian" action="../../config/controllers/proses_searching.php" method="GET">
             <input type="text" name="kata_kunci" class="search" placeholder="Search" maxlength="50">
             <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
         </form>

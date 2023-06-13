@@ -7,7 +7,6 @@
             <?php
             if (isset($_GET['hasil'])) {
                 $puisi_query = $_GET['hasil'];
-
                 // Eksekusi query hasil pencarian
                 $result = mysqli_query($conn, $puisi_query);
 
@@ -22,8 +21,8 @@
             ?>
         </div>
         <div class="pagination">
-            <a class="btn sebelumnya" href="#">Sebelumnya</a>
-            <a class="btn selanjutnya" href="#">Selanjutnya</a>
+            <!-- <a class="btn sebelumnya" href="#">Sebelumnya</a>
+            <a class="btn selanjutnya" href="#">Selanjutnya</a> -->
         </div>
     </div>
 </div>
